@@ -10,43 +10,43 @@ This project is a database system for a museum. The system is designed to store 
 * Item
 
 ### MUSEUM
-NAME - име, първичен ключ
-ADDRESS - адрес
-WEBSITE - уебсайт
-ESTABLISHED - година на основаване
-TYPE - вид
-EMPLOYEE_COUNT - брой на персонала
+* NAME -  primary key
+* ADDRESS 
+* WEBSITE
+* ESTABLISHED - year of establishment
+* TYPE 
+* EMPLOYEE_COUNT
 ### EXHIBITION 
-NAME и MUSEUM_NAME образуват първичен ключ
-NAME - име
-MUSEUM_NAME - име на музея, външен ключ към NAME.MUSEUM
-FLOOR - етаж
-AUDITORIUM - зала
-EXHIBIT_COUNT - брой на експонатите
+* NAME, MUSEUM_NAME - primary key
+* NAME 
+* MUSEUM_NAME - foreign key to NAME.MUSEUM
+* FLOOR 
+* AUDITORIUM 
+* EXHIBIT_COUNT 
 ### EXHIBIT
-ID - идентификационен номер, първичен ключ
-NAME - име
-MUSEUM_NAME - име на музея, външен ключ към NAME.MUSEUM
-EXHIBITION_NAME - име на изложбата, външен ключ към NAME.EXHIBITION
-YEAR - датира от
-AGE - епоха ('ВС'-преди христа, 'АС'-след христа)
-CONDITION - състояние (от 1 до 5; 1-много добро, 5-много лошо)
-COUNTRY - държава
+* ID - primary key
+* NAME 
+* MUSEUM_NAME - foreign key to NAME.MUSEUM
+* EXHIBITION_NAME - foreign key to NAME.EXHIBITION
+* YEAR - year of creation
+* AGE - 'ВС' or 'АС'
+* CONDITION - number from 1 to 5; 1-very good, 5-very bad
+* COUNTRY 
 ### EMPLOYEE
-ID - идентификационен номер, първичен ключ
-NAME - име
-MUSEUM_NAME - име на музея, външен ключ към NAME.MUSEUM
-POSITION - длъжност
-TELEPHONE - телефонен номер
-SALARY - месечна заплата
-### VISITORS - DATE и MUSEUM_NAME образуват първичен ключ
-DATE - месец и година
-MUSEUM_NAME - име на музея, външен ключ към NAME.MUSEUM
-VISITORS_COUNT - брой на посетителите за месеца
+* ID - primary key
+* NAME 
+* MUSEUM_NAME - foreign key to NAME.MUSEUM
+* POSITION 
+* TELEPHONE
+* SALARY
+### VISITORS 
+* DATE, MUSEUM_NAME - primary key
+* DATE - month and year
+* MUSEUM_NAME - foreign key to NAME.MUSEUM
+* VISITORS_COUNT - number of visitors for the month
 ### ITEM
-ID - идентификационен номер, първичен ключ
-MUSEUM_NAME - име на музея, външен ключ към NAME.MUSEUM
-COUNT - брой на атрибутите за месеца
-PRICE - цена
-TYPE - вид
-
+* ID - primary key
+* MUSEUM_NAME - foreign key to NAME.MUSEUM
+* COUNT - number of items for the month
+* PRICE 
+* TYPE 
